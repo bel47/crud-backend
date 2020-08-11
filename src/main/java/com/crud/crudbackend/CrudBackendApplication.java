@@ -9,8 +9,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class CrudBackendApplication implements CommandLineRunner {
-    @Autowired
-    private UserRepository userRepository;
+    private final UserRepository userRepository;
+
+    public CrudBackendApplication(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
+
     public static void main(String[] args) {
         SpringApplication.run(CrudBackendApplication.class, args);
     }
@@ -18,7 +22,7 @@ public class CrudBackendApplication implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         userRepository.save(new User("Belay","Retta"));
-        userRepository.save(new User("second","record"));
-        userRepository.save(new User("third","record"));
+        userRepository.save(new User("Beruk","HM"));
+        userRepository.save(new User("Third","Record"));
     }
 }
