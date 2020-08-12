@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpHeaders,HttpClient} from "@angular/common/http";
+import {HttpClient} from "@angular/common/http";
 import {Observable, throwError} from "rxjs";
 import {User} from "../user";
 
@@ -8,11 +8,11 @@ import {User} from "../user";
 })
 export class UserService {
   private baseUrl:string = 'http://localhost:8181/api/';
- // private headers = new HttpHeaders({'Content-Type': 'application/json; charset=utf-8'});
   constructor(private http:HttpClient) { }
 
-  getUsers(){
-    return this.http.get(this.baseUrl+'users');
+  getUsers(): Observable<User[]> {
+    // return this.http.get(this.baseUrl+'users');
+    return this.http.get<User[]>(this.baseUrl+'users');
   }
   getUser(id:number){
     return this.http.get(this.baseUrl+'user/'+id);

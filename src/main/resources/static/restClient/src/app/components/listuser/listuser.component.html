@@ -1,1 +1,22 @@
-<p>listuser works!</p>
+<h1>List of users</h1>
+<div class="container">
+<table class="table table-striped">
+  <thead>
+    <th>Id</th>
+    <th>First Name</th>
+    <th>Last Name</th>
+  </thead>
+  <tbody>
+  <tr *ngFor="let users of user | async">
+    <td>{{users.id}}</td>
+    <td>{{users.fname}}</td>
+    <td>{{users.lname}}</td>
+    <td>  <button class="btn btn-danger">Delete</button>&nbsp;
+           <button class="btn btn-primary">Edit</button>
+
+    </td>
+  </tr>
+  </tbody>
+</table>
+  <button class="btn btn-primary">New User</button>
+</div>
