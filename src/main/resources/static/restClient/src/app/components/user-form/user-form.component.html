@@ -1,1 +1,17 @@
-<p>user-form works!</p>
+<h1>User Form</h1>
+<div class="container">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <input type="text" class="form-control" id="id" required [(ngModel)]="user.id" name="id">
+    </div>
+    <div class="form-group">
+      <label for="firstName">First Name</label>
+      <input type="text" class="form-control" id="firstName" required [(ngModel)]="user.fname" name="fname">
+    </div>
+    <div class="form-group">
+      <label for="lastName">Last Name</label>
+      <input type="text" class="form-control" id="lastName" required [(ngModel)]="user.lname" name="lname">
+    </div>
+    <button type="submit" class="btn btn-success" value="save">Submit</button>
+  </form>
+</div>
