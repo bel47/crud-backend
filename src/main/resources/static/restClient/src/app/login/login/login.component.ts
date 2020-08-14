@@ -8,14 +8,15 @@ import {Router} from "@angular/router";
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
+  msg:string;
   constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
+
   login(){
-    let user = new User();
-    //this.userService.setter(user);
-    this.router.navigate(["/login"]);
+    this.msg='login button is Clicked';
+    console.log(this.msg);
   }
+
 }
