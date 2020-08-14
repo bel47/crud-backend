@@ -8,6 +8,7 @@ import { UserFormComponent } from './components/user-form/user-form.component';
 import {UserService} from "./shared_service/user.service";
 import {HttpClientModule} from "@angular/common/http";
 import {FormsModule} from "@angular/forms";
+import { LoginComponent } from './login/login/login.component';
 const appRoutes:Routes =[
   {path:'',component:ListuserComponent},
   {path:'op',component:UserFormComponent}
@@ -16,7 +17,8 @@ const appRoutes:Routes =[
   declarations: [
     AppComponent,
     ListuserComponent,
-    UserFormComponent
+    UserFormComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

@@ -10,7 +10,7 @@ export class UserService {
   private baseUrl:string = 'http://localhost:8181/api/';
   private user:User;
 
-   headerOptions = new HttpHeaders().set('Content-Type', 'application/json');;
+   headerOptions = new HttpHeaders().set('Content-Type', 'application/json');
 
   constructor(private http:HttpClient) { }
 
