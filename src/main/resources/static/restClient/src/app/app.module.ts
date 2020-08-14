@@ -11,7 +11,8 @@ import {FormsModule} from "@angular/forms";
 import { LoginComponent } from './login/login/login.component';
 const appRoutes:Routes =[
   {path:'',component:ListuserComponent},
-  {path:'op',component:UserFormComponent}
+  {path:'op',component:UserFormComponent},
+  {path:'login',component:LoginComponent}
 ];
 @NgModule({
   declarations: [
