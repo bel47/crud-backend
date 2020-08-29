@@ -1,12 +1,13 @@
-node ("windows") {
-  stage ('Build') {
+node {
+  stage ('SCM Checkout') {
 
     git 'https://github.com/bel47/crud-backend'
+  }
+  stage('Compile Package'){
 
-    withMaven(...) {
 
       bat "mvn clean install"
 
-    } // withMaven will discover the generated Maven artifacts, JUnit Surefire & FailSafe reports and FindBugs reports
+
   }
 }
