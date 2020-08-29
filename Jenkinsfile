@@ -1,7 +1,7 @@
 node ("windows") {
   stage ('Build') {
 
-    git url: 'https://github.com/cyrille-leclerc/multi-module-maven-project'
+    git 'https://github.com/bel47/crud-backend'
 
     withMaven(...) {
 
