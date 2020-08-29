@@ -1,9 +1,12 @@
-node {
-  stage('SCM Checkout'){
-    git 'https://github.com/bel47/crud-backend'
-  }
-  stage('Compile-Package'){
-   bat "C:\apache-maven-3.6.3\bin"
-  }
+node ("windows") {
+  stage ('Build') {
 
+    git url: 'https://github.com/cyrille-leclerc/multi-module-maven-project'
+
+    withMaven(...) {
+
+      bat "mvn clean install"
+
+    } // withMaven will discover the generated Maven artifacts, JUnit Surefire & FailSafe reports and FindBugs reports
+  }
 }
