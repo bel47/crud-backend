@@ -5,7 +5,7 @@ node {
   }
   stage('Compile Package'){
       def mvnHome = tool name: 'C:\\apache-maven-3.6.3\\bin', type: 'maven'
-    bat "${mvnHome}mvn clean package"
+    bat "${mvnHome}\mvn clean package"
 
 
   }
