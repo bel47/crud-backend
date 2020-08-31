@@ -4,9 +4,8 @@ node {
     git 'https://github.com/bel47/crud-backend'
   }
   stage('Compile Package'){
-      def mvnHome = tool name: 'maven-3.6.3', type: 'maven'
-      
-    bat "C:\Program Files\apache-maven-3.2.3\bin"
+      def mvnHome = tool name: 'C:\\apache-maven-3.6.3\\bin', type: 'maven'
+    bat "${mvnHome}mvn clean package"
 
 
   }
