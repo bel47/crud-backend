@@ -1,12 +1,12 @@
 node {
   stage ('SCM Checkout') {
-
+   
     git 'https://github.com/bel47/crud-backend'
   }
   stage('Compile Package'){
-
-
-      bat "mvn clean install"
+      def mvnHome = tool name: 'maven-3.6.3', type: 'maven'
+      
+    bat "{$mvnHome}/bin/mvn package"
 
 
   }
